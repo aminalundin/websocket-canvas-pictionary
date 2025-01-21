@@ -3,7 +3,9 @@ import http from 'http';
 import { WebSocketServer } from 'ws';
 
 const app = express();
-const PORT = 8082;
+const PORT = 8080;
+
+app.use(express.static("public"));
 
 const server = http.createServer(app);
 
