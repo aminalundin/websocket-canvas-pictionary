@@ -9,28 +9,30 @@
 </head>
 
 <body>
-    <p>chat</p>
-
+    <div class="canvas-container">
+        <p>canvas</p>
+    </div>
     <div class="chat-container">
+        <p>chat</p>
         <div class="chat-form" id="user-form">
             <form action="">
-                <label for="user">Your name</label>
-                <input type="text" name="user" id="user" required>
-                <input type="submit" value="Save">
+                <!-- <label for="user">Your name</label> -->
+                <input type="text" name="user" id="user" required placeholder="your name">
+                <input type="submit" value="Save" class="user-button">
             </form>
         </div>
 
         <div class="hidden" id="message-form">
 
+            
+                        <div id="chat">
+            
+                        </div>
             <form action="">
-                <label for="message">Text:</label>
-                <input type="text" id="message" name="message" required>
-                <input type="submit" value="Send">
+                <!-- <label for="message">Text:</label> -->
+                <input type="text" id="message" name="message" required placeholder="type">
+                <input type="submit" value="Send" class="message-button">
             </form>
-
-            <div id="chat">
-                
-            </div>
         </div>
 
 
