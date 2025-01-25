@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="/style.css">
+
 <body>
     <p>hej</p>
+
+    <div class="chat-container">
+        <div class="chat-form">
+        <form action="">
+            <label for="user">Your name</label>
+            <input type="text" name="user" id="user" required>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+
+    <div class="message-box">
+        <h2>messages</h2>
+        <form action="">
+            <label for="message">Text:</label>
+            <input type="text" id="message" name="message" required>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <div id="chat-box">
+        
+    </div>
+
+
+    </div>
+
     <script src="app.js" type="module"></script>
 </body>
+
 </html>
