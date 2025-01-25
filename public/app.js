@@ -39,7 +39,7 @@ messageForm.addEventListener("submit", (e) => {
 
     objChat.message = messageInput.value;
 
-    // clear input field
+    // clear input field after message is sent
     messageInput.value = "";
 
     // call for function to update chat history

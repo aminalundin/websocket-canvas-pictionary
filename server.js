@@ -22,7 +22,6 @@ server.on('upgrade', (req, socket, head) => {
     // verify what is needed for websocket communication
     // return;
 
-
     wss.handleUpgrade(req, socket, head, (ws) => {
 
         // pass websocket communication
@@ -45,21 +44,32 @@ wss.on('connection', (ws => {
     ws.on('message', (stream) => {
         const obj = JSON.parse(stream);
 
-
         console.log(`${obj.user} says ${obj.message}`)
 
         // messages than comes through to the server shall be passed on 
         // to any connected clients
-        wss.clients.forEach(client => {
-
-            if (client !== ws) {
-
-                client.send(JSON.stringify(obj));
-            }
-        });
+        broadcastExclude(wss, ws, obj);
 
     });
 }));
+
+// functions to send chat messages to all or some clients
+function broadcast(wss, obj) {
+    wss.clients.forEach(client => {
+        client.send(JSON.stringify(obj));
+
+    });
+}
+
+function broadcastExclude(wss, ws, obj) {
+    wss.clients.forEach(client => {
+
+        if (client !== ws) {
+
+            client.send(JSON.stringify(obj));
+        }
+    });
+}
 
 
 
