@@ -18,10 +18,10 @@ const wss = new WebSocketServer({ noServer: true })
 // ensure websocket communication
 server.on('upgrade', (req, socket, head) => {
     console.log("client upgrade")
-    
+
     // verify what is needed for websocket communication
     // return;
-    
+
 
     wss.handleUpgrade(req, socket, head, (ws) => {
 
@@ -35,13 +35,31 @@ server.on('upgrade', (req, socket, head) => {
 wss.on('connection', (ws => {
     console.log(`new client connection`)
 
+    // to see number of clients: wss.clients.size
+    // to see any closed events:
+    // ws.on('close', () => {
+    //     console.log("client left")
+    // })
+
     // listen to events, handle all messages as JSON
     ws.on('message', (stream) => {
         const obj = JSON.parse(stream);
 
-        console.log(obj.message)
-    })
-}))
+
+        console.log(`${obj.user} says ${obj.message}`)
+
+        // messages than comes through to the server shall be passed on 
+        // to any connected clients
+        wss.clients.forEach(client => {
+
+            if (client !== ws) {
+
+                client.send(JSON.stringify(obj));
+            }
+        });
+
+    });
+}));
 
 
 

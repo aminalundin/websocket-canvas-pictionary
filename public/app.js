@@ -5,8 +5,11 @@ const chat = document.querySelector("#chat")
 const userInput = document.querySelector("#user")
 const messageInput = document.querySelector("#message")
 
+// application dependencies
+
+
 // websocket
-const webSocket = new WebSocket("ws://localhost:8080");
+const webSocket = new WebSocket("ws://192.168.0.15:8080");
 
 // declare object for chat messages
 let objChat = {};
@@ -41,9 +44,23 @@ messageForm.addEventListener("submit", (e) => {
 
     // call for function to update chat history
     renderChat(objChat)
+
+    // send object to server via websocket
+    webSocket.send(JSON.stringify(objChat));
+});
+
+webSocket.addEventListener('message', (event) => {
+    console.log("event", event)
+
+    const obj = JSON.parse(event.data);
+
+    renderChat(obj);
 });
 
 
+
+
+// helper functions
 /**
  *
  *
@@ -52,14 +69,16 @@ messageForm.addEventListener("submit", (e) => {
 function renderChat(obj) {
 
     const div = document.createElement("div");
-    const p = document.createElement("p")
-    p.textContent = obj.message;
 
     const span = document.createElement("span");
     span.textContent = obj.user;
 
-    div.appendChild(p);
+    const p = document.createElement("p")
+    p.textContent = obj.message;
+
+
     div.appendChild(span);
+    div.appendChild(p);
 
     chat.appendChild(div);
 
