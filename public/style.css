@@ -5,12 +5,12 @@
 
 @font-face {
     font-family: 'Medium';
-    src: url(/public/assets/fonts/RedHatDisplay-Medium.ttf);
+    src: url('/assets/fonts/RedHatDisplay-Medium.ttf');
 }
 
 @font-face {
     font-family: 'Bold';
-    src: url(/public/assets/fonts/RedHatDisplay-Bold.ttf);
+    src: url('/assets/fonts/RedHatDisplay-Bold.ttf');
 }
 body {
     margin: 0;
@@ -72,6 +72,29 @@ form {
     font-family: 'Light';
 }
 
+.chat-username {
+    font-family: 'Medium';
+    padding-bottom: 0;
+}
+
+.chat-message {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.chat-container {
+    width: 35%;
+    height: 100vh;
+    padding: 1rem;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .canvas-container {
     width: 65%;
     height: 100vh;
@@ -79,12 +102,6 @@ form {
     background-color: lightblue;
 }
 
-.chat-container {
-    width: 35%;
-    height: 100vh;
-    padding: 1rem;
-    background-color: pink;
-}
 
 
 /* .hidden {

@@ -38,6 +38,7 @@ messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     objChat.message = messageInput.value;
+    objChat.time = new Date().toLocaleTimeString();
 
     // clear input field after message is sent
     messageInput.value = "";
@@ -72,13 +73,20 @@ function renderChat(obj) {
 
     const span = document.createElement("span");
     span.textContent = obj.user;
+    span.classList.add("chat-username")
+
+    const time = document.createElement("span");
+    time.textContent = obj.time;
+    time.classList.add("chat-message");
 
     const p = document.createElement("p")
     p.textContent = obj.message;
+    p.classList.add("chat-message")
 
 
     div.appendChild(span);
     div.appendChild(p);
+    div.appendChild(time);
 
     chat.appendChild(div);
 
