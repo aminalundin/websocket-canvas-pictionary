@@ -105,6 +105,7 @@ form {
     padding: 1rem;
     background-color: lightblue;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -115,8 +116,85 @@ canvas {
     border: 1px solid black;
 }
 
+.tools {
+    border: 1px solid black;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.draw {
+    width: 80px;
+    height: 30px;
+    border: none;
+}
 
-/* .hidden {
-    display: none;
-} */
+.correct {
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+.incorrect {
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+.red {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: none;
+}
+
+.green {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border: none;
+}
+
+.blue {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border: none;
+}
+
+.yellow {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border: none;
+}
+
+.orange {
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border: none;
+}
+
+.pink {
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border: none;
+}
+
+.black {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: none;
+}
+
+.white {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: none;
+}

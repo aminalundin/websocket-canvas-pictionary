@@ -16,8 +16,6 @@ const webSocket = new WebSocket("ws://192.168.0.15:8080");
 let objChat = {};
 
 // CANVAS
-// const ctx = canvas.getContext("2d");
-
 
 let isDrawing = false;
 
