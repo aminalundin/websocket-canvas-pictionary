@@ -95,11 +95,24 @@ form {
     justify-content: center;
 }
 
+
+
+/* CANVAS */
+
 .canvas-container {
     width: 65%;
     height: 100vh;
     padding: 1rem;
     background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    height: 400px;
+    width: 600px;
+    border: 1px solid black;
 }
 
 
