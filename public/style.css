@@ -202,3 +202,8 @@ canvas {
     background-color: white;
     border: 1px solid black;
 }
+
+.word-display {
+    font-family: "Medium";
+    padding: 1rem;
+}
