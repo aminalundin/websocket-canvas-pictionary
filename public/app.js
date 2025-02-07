@@ -6,7 +6,14 @@ const userInput = document.querySelector("#user")
 const messageInput = document.querySelector("#message")
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-
+const red = document.getElementById("red");
+const green = document.getElementById("green");
+const blue = document.getElementById("blue");
+const yellow = document.getElementById("yellow");
+const orange = document.getElementById("orange");
+const pink = document.getElementById("pink");
+const black = document.getElementById("black");
+const white = document.getElementById("white");
 
 
 // websocket
@@ -74,6 +81,41 @@ canvas.addEventListener("mouseout", () => {
 
 
 // EVENT LISTENERS
+
+
+
+red.addEventListener("click", function (event) {
+    ctx.strokeStyle = "red";
+});
+
+green.addEventListener("click", function (event) {
+    ctx.strokeStyle = "green";
+});
+
+blue.addEventListener("click", function (event) {
+    ctx.strokeStyle = "blue";
+});
+
+yellow.addEventListener("click", function (event) {
+    ctx.strokeStyle = "yellow";
+});
+
+orange.addEventListener("click", function (event) {
+    ctx.strokeStyle = "orange";
+});
+
+pink.addEventListener("click", function (event) {
+    ctx.strokeStyle = "pink";
+});
+
+black.addEventListener("click", function (event) {
+    ctx.strokeStyle = "black";
+});
+
+white.addEventListener("click", function (event) {
+    ctx.strokeStyle = "white";
+});
+
 
 // user form
 userForm.addEventListener("submit", (e) => {
