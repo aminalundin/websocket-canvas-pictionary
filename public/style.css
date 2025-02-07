@@ -1,3 +1,5 @@
+@media screen and (min-width: 480px) {
+    
 @font-face {
     font-family: 'Light';
     src: url('/assets/fonts/RedHatDisplay-Light.ttf');
@@ -135,7 +137,7 @@ canvas {
     border: none;
 }
 
-.correct {
+.clear {
     width: 100px;
     height: 30px;
     border: none;
@@ -206,4 +208,223 @@ canvas {
 .word-display {
     font-family: "Medium";
     padding: 1rem;
+}
+}
+
+
+@media screen and (max-width: 480px) {
+
+    @font-face {
+        font-family: 'Light';
+        src: url('/assets/fonts/RedHatDisplay-Light.ttf');
+    }
+    
+    @font-face {
+        font-family: 'Medium';
+        src: url('/assets/fonts/RedHatDisplay-Medium.ttf');
+    }
+    
+    @font-face {
+        font-family: 'Bold';
+        src: url('/assets/fonts/RedHatDisplay-Bold.ttf');
+    }
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    height: 50%;
+    padding: 1rem;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#user {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 5px;
+}
+
+#message {
+    padding-bottom: 10px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.message-button {
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+}
+
+.user-button {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+form {
+    padding-bottom: 1rem;
+    margin-top: 0px;
+}
+
+#chat {
+    background-color: #EFEFEF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    height: 120px;
+    width: 250px;
+    font-family: 'Light';
+}
+
+.chat-username {
+    font-family: 'Medium';
+    padding-bottom: 0;
+}
+
+.chat-message {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* CANVAS */
+
+.canvas-container {
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    height: 50%;
+   
+}
+
+canvas {
+    height: 40dvh;
+    width: 40dvh;
+    border: 1px solid black;
+}
+
+.tools {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: 80px;
+    width: 40dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.buttons {
+    padding-top: 0.5rem;
+}
+
+.colors {
+    padding: 0.5rem;
+}
+
+.draw {
+    width: 80px;
+    height: 30px;
+    border: none;
+}
+
+.clear {
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+.incorrect {
+    width: 100px;
+    height: 30px;
+    border: none;
+}
+
+.red {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: none;
+}
+
+.green {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border: none;
+}
+
+.blue {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border: none;
+}
+
+.yellow {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border: none;
+}
+
+.orange {
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border: none;
+}
+
+.pink {
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border: none;
+}
+
+.black {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: none;
+}
+
+.white {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.word-display {
+    font-family: "Medium";
+    padding-top: 1rem;
+}
+
+
+
 }

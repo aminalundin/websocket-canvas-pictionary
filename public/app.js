@@ -166,6 +166,9 @@ messageForm.addEventListener("submit", (e) => {
     objChat.message = messageInput.value;
     objChat.time = new Date().toLocaleTimeString();
 
+    objChat.correct = objChat.message.toLowerCase() === currentWord.toLowerCase();
+
+
     // clear input field after message is sent
     messageInput.value = "";
 
@@ -177,7 +180,6 @@ messageForm.addEventListener("submit", (e) => {
 });
 
 webSocket.addEventListener('message', (event) => {
-    console.log("event", event)
 
     const obj = JSON.parse(event.data);
     const data = JSON.parse(event.data);
@@ -218,9 +220,12 @@ function renderChat(obj) {
     p.textContent = obj.message;
     p.classList.add("chat-message")
 
-    if (obj.message.toLowerCase() === currentWord.toLowerCase()) {
-        div.style.backgroundColor = "lightgreen";
+    if (obj.correct) {
+        div.style.backgroundColor = "lightgreen"
     }
+    // if (obj.message.toLowerCase() === currentWord.toLowerCase()) {
+    //     div.style.backgroundColor = "lightgreen";
+    // }
 
     div.appendChild(span);
     div.appendChild(p);
