@@ -14,6 +14,7 @@ const orange = document.getElementById("orange");
 const pink = document.getElementById("pink");
 const black = document.getElementById("black");
 const white = document.getElementById("white");
+const clear = document.getElementById("clear")
 
 
 // websocket
@@ -116,6 +117,10 @@ white.addEventListener("click", function (event) {
     ctx.strokeStyle = "white";
 });
 
+
+clear.addEventListener("click", function () {
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+})
 
 // user form
 userForm.addEventListener("submit", (e) => {
