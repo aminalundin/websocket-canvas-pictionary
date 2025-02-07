@@ -10,7 +10,8 @@ const ctx = canvas.getContext("2d");
 
 
 // websocket
-const webSocket = new WebSocket("ws://192.168.0.15:8080");
+// const webSocket = new WebSocket("ws://192.168.0.15:8080");
+const webSocket = new WebSocket("http://localhost:8080");
 
 // declare object for chat messages
 let objChat = {};
