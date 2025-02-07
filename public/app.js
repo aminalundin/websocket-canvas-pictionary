@@ -19,9 +19,6 @@ const draw = document.getElementById("draw");
 const wordDisplay = document.getElementById("wordDisplay");
 
 
-
-
-
 // websocket
 // const webSocket = new WebSocket("ws://192.168.0.15:8080");
 const webSocket = new WebSocket("http://localhost:8080");
@@ -34,6 +31,8 @@ const words = [
     "apple", "car", "house", "tree", "sun", "boat", "cat", "dog", "flower", "star",
     "guitar", "ball", "moon", "fish", "elephant", "pencil", "cloud", "book", "chair", "clock" 
 ]
+
+let currentWord = "";
 
 // CANVAS
 
@@ -136,10 +135,10 @@ clear.addEventListener("click", function () {
 // used ChatGPT to get random word
 draw.addEventListener("click", function () {
     const randomIndex = Math.floor(Math.random() * words.length);
-    const randomWord = words[randomIndex];
-    console.log(randomWord);
+    currentWord = words[randomIndex];
+    // console.log(randomWord);
 
-    wordDisplay.textContent = `Draw: ${randomWord}`;
+    wordDisplay.textContent = `Draw: ${currentWord}`;
 
 })
 
@@ -219,6 +218,9 @@ function renderChat(obj) {
     p.textContent = obj.message;
     p.classList.add("chat-message")
 
+    if (obj.message.toLowerCase() === currentWord.toLowerCase()) {
+        div.style.backgroundColor = "lightgreen";
+    }
 
     div.appendChild(span);
     div.appendChild(p);
