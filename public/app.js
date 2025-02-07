@@ -15,6 +15,11 @@ const pink = document.getElementById("pink");
 const black = document.getElementById("black");
 const white = document.getElementById("white");
 const clear = document.getElementById("clear")
+const draw = document.getElementById("draw");
+const wordDisplay = document.getElementById("wordDisplay");
+
+
+
 
 
 // websocket
@@ -23,6 +28,12 @@ const webSocket = new WebSocket("http://localhost:8080");
 
 // declare object for chat messages
 let objChat = {};
+
+// array of words to be drawn
+const words = [
+    "apple", "car", "house", "tree", "sun", "boat", "cat", "dog", "flower", "star",
+    "guitar", "ball", "moon", "fish", "elephant", "pencil", "cloud", "book", "chair", "clock" 
+]
 
 // CANVAS
 
@@ -120,6 +131,16 @@ white.addEventListener("click", function (event) {
 
 clear.addEventListener("click", function () {
     ctx.clearRect(0,0, canvas.width, canvas.height);
+})
+
+// used ChatGPT to get random word
+draw.addEventListener("click", function () {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    const randomWord = words[randomIndex];
+    console.log(randomWord);
+
+    wordDisplay.textContent = `Draw: ${randomWord}`;
+
 })
 
 // user form
